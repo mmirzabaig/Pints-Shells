@@ -65,5 +65,5 @@ import React, { Component } from 'react';
   }
 }
 export default GoogleApiWrapper({
-    apiKey: "AIzaSyAK6X7LO2EiudURnWklG1cqH0yGsnlxgbA"
+    apiKey: "AIzaSyDRUpBESMbs6306QTg9QeIvQmbhApYl2Qw"
 })(GoogleMapsContainer)
