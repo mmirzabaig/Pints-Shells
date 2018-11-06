@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Map from './MapContainer';
+import BrewLocator from './BrewLocator';
 import BreweryContainer from './BreweryContainer';
 import './App.css';
 
@@ -12,6 +13,7 @@ class App extends Component {
 
         <div className="findBrewery">
           <h2>Search for breweries here</h2>
+          <BrewLocator locationData={this.state.locations} />
           <BreweryContainer />
         </div>
 
