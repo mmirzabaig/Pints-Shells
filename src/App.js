@@ -10,15 +10,13 @@ class App extends Component {
   constructor() {
   super();
   this.state = {
-    locations: [],
-    coordiantes: []
+    locations: []
   }
 }
 
 getBrewData = async () => {
   try {
   const brewData = await fetch('https://api.openbrewerydb.org/breweries?by_city=austin&per_page=50');
-  //'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDRUpBESMbs6306QTg9QeIvQmbhApYl2Qw'
   const brewDataJson = await brewData.json();
   return brewDataJson
   } catch(err) {
