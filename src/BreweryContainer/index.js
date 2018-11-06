@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Button } from 'semantic-ui-react';
 import BrewLocator from '../BrewLocator';
-
 class BreweryContainer extends Component {
 
   constructor() {
@@ -55,8 +55,10 @@ componentDidMount() {
   render(){
     return(
       <div>
-        <h1>The brewery info go here. Tacos included!</h1>
-        <BrewLocator locationData={this.state.locations} />
+
+      <h1>The brewery info go here. Tacos included!</h1>
+      <Button color="red">View Your Favorite Breweries</Button>
+      <BrewLocator locationData={this.state.locations} />
       </div>
     )
   }

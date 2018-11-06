@@ -34,8 +34,8 @@ import React, { Component } from 'react';
   render() {
 
     const style = {
-      width: '45%',
-      height: '80%',
+      width: '90%',
+      height: '70%',
       position: 'relative'
     }
     return (
@@ -45,8 +45,8 @@ import React, { Component } from 'react';
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = { 10 }
-        initialCenter = {{ lat: 30.2762, lng: -97.7533 }}
+        zoom = { 11 }
+        initialCenter = {{ lat: 30.3005, lng: -97.7388 }}
       >
         <Marker
           onClick = { this.onMarkerClick }
