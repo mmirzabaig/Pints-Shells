@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Map from './MapContainer';
+import Header from './Header';
 import BrewLocator from './BrewLocator';
 import BreweryContainer from './BreweryContainer';
 import './App.css';
@@ -38,7 +39,7 @@ componentDidMount() {
   render() {
     return (
       <div className="App">
-        <h1>Welcome to Pints & Shells!</h1>
+      <Header />
 
         <div className="findBrewery">
           <h2>Search for breweries here</h2>
