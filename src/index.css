@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.brew {
+  border: 2px solid black;
+  max-width: 35%;
+  max-height: 15%;
+}

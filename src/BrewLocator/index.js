@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Card, Button } from 'semantic-ui-react';
+import '../index.css';
 
 class BrewLocator extends Component {
   constructor(props) {
@@ -44,23 +46,30 @@ class BrewLocator extends Component {
       if(item.street.length > 3) {
       i++;
       return  (
-        <div key={index} >
-          <h2><p>{i}</p></h2>
-          <h2><p>{item.name}</p></h2>
-          <h2><p>{item.street}</p></h2>
-          <h2><p>{item.city}</p></h2>
-          <h2><p>{item.state}</p></h2>
-          <h2><p>{item.website_url}</p></h2>
-          <h2><p>Longitude: {item.longitude}</p></h2>
-          <h2><p>Latitude: {item.latitude}</p></h2>
-        </div>
+        <Card key={index}>
+        <Card.Content>
+            <Card.Header>{item.name}</Card.Header>
+            <Card.Description>
+              {item.street}<br />
+              {item.city}, {item.state}<br />
+              {item.website_url}<br />
+              Longitude: {item.longitude}<br />
+              Latitude: {item.latitude}<br />
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <Button color="green">Add to Brew Tour</Button>
+          </Card.Content>
+        </Card>
       )
     }
     });
     return(
       <div>
-        <h1>HELLO</h1>
-        <ul>{brewLocations} <br/> <br/> </ul>
+        <h1>Location of Brewery</h1>
+
+              <ul>{brewLocations}</ul>
+
       </div>
     );
   }
