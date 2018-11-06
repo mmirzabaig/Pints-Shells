@@ -18,6 +18,10 @@
   color: white;
 }
 
+.brewsList {
+  float: right;
+}
+
 .App-link {
   color: #61dafb;
 }

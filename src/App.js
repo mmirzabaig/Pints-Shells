@@ -19,6 +19,10 @@ class App extends Component {
           <Map />
         </div>
 
+        <div className="brewsList">
+
+        </div>
+
       </div>
     );
   }
