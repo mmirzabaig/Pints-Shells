@@ -44,7 +44,6 @@ componentDidMount() {
 
         <div className="findBrewery">
           <h2>Search for breweries here</h2>
-          <BrewLocator locationData={this.state.locations} />
           <BreweryContainer />
         </div>
 
@@ -53,7 +52,7 @@ componentDidMount() {
         </div>
 
         <div className="brewsList">
-
+          <BrewLocator locationData={this.state.locations} />
         </div>
 
       </div>
