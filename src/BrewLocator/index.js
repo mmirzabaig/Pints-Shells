@@ -10,10 +10,6 @@ class BrewLocator extends Component {
     }
   }
 
-  componentWillReceiveProps(props) {
-
-    this.setState({data: props});
-  }
 
     getGeoLocation = async () => {
       try {
@@ -31,6 +27,7 @@ class BrewLocator extends Component {
         console.log(err)
       })
     }
+
 
   render() {
     let i = 1;
