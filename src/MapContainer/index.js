@@ -45,7 +45,7 @@ import React, { Component } from 'react';
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = { 14 }
+        zoom = { 10 }
         initialCenter = {{ lat: 30.2762, lng: -97.7533 }}
       >
         <Marker
