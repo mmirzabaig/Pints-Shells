@@ -13,9 +13,17 @@ class BrewLocator extends Component {
 
     getGeoLocation = async () => {
       try {
-        await console.log(this.state.data);
-        // const coordinates = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=407+Radam+Ln+Ste+F200,+Austin,+TX&key=AIzaSyDRUpBESMbs6306QTg9QeIvQmbhApYl2Qw');
-        // const coordinatesJson = await coordinates.json();
+        let dataArray = ['13187+Fitzhugh+Rd', '6548+Comanche+Trl+Ste+301', '5700+Interstate+Blvd']
+        let array = [];
+        for ( let i = 0; i < dataArray.length; i++ ) {
+          const coordinates = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address='+ dataArray[i] + 'Austin,+TX&key=AIzaSyDRUpBESMbs6306QTg9QeIvQmbhApYl2Qw');
+          const coordinatesJson = await coordinates.json();
+          array.push(coordinatesJson);
+          console.log(coordinatesJson, 'JSON');
+        }
+
+        return array;
+
       } catch(err) {
         return(err)
       }
@@ -23,6 +31,7 @@ class BrewLocator extends Component {
     componentDidMount(){
       this.getGeoLocation().then((item) => {
         this.setState({coordinates: item})
+        console.log(this.state.coordinates, 'OBJECT COORDINATES')
       }).catch((err) => {
         console.log(err)
       })
