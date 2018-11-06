@@ -29,6 +29,21 @@ import React, { Component } from 'react';
 
   render() {
 
+    console.log(this.props.brewData);
+
+    const markerLocations = this.props.brewData.map((item, index) => {
+      return(
+        <Marker
+          onClick = { this.onMarkerClick }
+          title = { 'Graffiti Park, Austin, TX, USA' }
+          position = {{ lat: item.latitude, lng: item.longitude }}
+          name = { 'Graffiti Park, Austin, TX, USA' }
+        />
+      )
+    });
+
+
+
     const style = {
       width: '90%',
       height: '70%',
@@ -44,12 +59,7 @@ import React, { Component } from 'react';
         zoom = { 11 }
         initialCenter = {{ lat: 30.3005, lng: -97.7388 }}
       >
-        <Marker
-          onClick = { this.onMarkerClick }
-          title = { 'Graffiti Park, Austin, TX, USA' }
-          position = {{ lat: 30.2762, lng: -97.7533 }}
-          name = { 'Graffiti Park, Austin, TX, USA' }
-        />
+        {markerLocations}
         <InfoWindow
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }

@@ -3,7 +3,6 @@ import { Button } from 'semantic-ui-react';
 import logo from './logo.svg';
 import Map from './MapContainer';
 import BrewLocator from './BrewLocator';
-import BreweryContainer from './BreweryContainer';
 import './App.css';
 
 class App extends Component {
@@ -31,7 +30,6 @@ try {
     const coordinatesJson = await coordinates.json();
     data.latitude = coordinatesJson.results[0].geometry.location.lat;
     data.longitude = coordinatesJson.results[0].geometry.location.lng;
-    console.log(data.id, data.latitude, data.longitude)
 
 
     this.setState(prevState => ({
@@ -67,7 +65,7 @@ componentDidMount() {
         </div>
 
         <div className="map">
-          <Map />
+          <Map brewData={this.state.locations}/>
         </div>
 
         <div className="brewsList">
