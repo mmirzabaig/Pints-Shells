@@ -6,13 +6,9 @@ import React, { Component } from 'react';
   constructor(props) {
     super(props);
     this.state = {
-      showingInfoWindow: false,
-      activeMarker: [],
-      selectedPlace: {}
+
     }
-    // binding this to event-handler functions
-    this.onMarkerClick = this.onMarkerClick.bind(this);
-    this.onMapClick = this.onMapClick.bind(this);
+
   }
 
   onMarkerClick = (props, marker, e) => {
