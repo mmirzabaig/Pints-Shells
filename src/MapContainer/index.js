@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 
- import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
+ import { GoogleApiWrapper, InfoWindow, Map, Marker, Content } from 'google-maps-react';
 
   class GoogleMapsContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      info: []
     }
 
   }
 
   onMarkerClick = (props, marker, e) => {
+    console.log(props, 'HELLO')
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
-      showingInfoWindow: true
+      showingInfoWindow: true,
+      info: props
+
     });
   }
   onMapClick = (props) => {
@@ -34,11 +37,13 @@ import React, { Component } from 'react';
     const markerLocations = this.props.brewData.map((item, index) => {
       return(
         <Marker
+          key = {index}
           onClick = { this.onMarkerClick }
-          title = { 'Graffiti Park, Austin, TX, USA' }
+          title = { item.name }
           position = {{ lat: item.latitude, lng: item.longitude }}
-          name = { 'Graffiti Park, Austin, TX, USA' }
+          name = { item.name }
         />
+
       )
     });
 
@@ -50,6 +55,7 @@ import React, { Component } from 'react';
       position: 'relative'
     }
     return (
+      <div>
       <Map
         item
         xs = { 12 }
@@ -61,12 +67,17 @@ import React, { Component } from 'react';
       >
         {markerLocations}
         <InfoWindow
+
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }
         >
+        <content>
+        {this.state.info.title}
+        </content>
 
         </InfoWindow>
       </Map>
+      </div>
     );
   }
 }
