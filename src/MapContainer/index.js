@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'semantic-ui-react';
+import ReactDOM from "react-dom";
 
  import { GoogleApiWrapper, InfoWindow, Map, Marker, Content } from 'google-maps-react';
 
@@ -14,7 +15,7 @@ import { Card, Button } from 'semantic-ui-react';
 
   onMarkerClick = (props, marker, e) => {
 
-    console.log(props, 'HELLO')
+    // console.log(props, 'HELLO')
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -32,6 +33,19 @@ import { Card, Button } from 'semantic-ui-react';
     }
   }
 
+  onInfoWindowOpen(props, e) {
+    const button = (
+      <Button color="green" onClick={e => {
+          console.log("please work");
+        }}
+      >Add to Brew Tour</Button>
+    );
+    ReactDOM.render(
+      React.Children.only(button),
+      document.getElementById("addTour")
+    );
+  }
+
   render() {
 
     console.log(this.props.brewData);
@@ -46,7 +60,7 @@ import { Card, Button } from 'semantic-ui-react';
           city = {item.city}
           state = {item.state}
           website_url = {item.website_url}
-          street = {street}
+          street = {item.street}
           phone = {item.phone}
           id = {item.id}
         />
@@ -77,6 +91,9 @@ import { Card, Button } from 'semantic-ui-react';
 
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }
+          onOpen={e => {
+                this.onInfoWindowOpen(this.props, e);
+              }}
         >
         <content>
         <div>
@@ -91,7 +108,7 @@ import { Card, Button } from 'semantic-ui-react';
           </Card.Description>
           </Card.Content>
           <Card.Content extra>
-          <Button color="green">Add to Brew Tour</Button>
+          <div id="addTour" />
           </Card.Content>
           </Card>
           </div>

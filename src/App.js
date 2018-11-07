@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
-import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
 import './App.css';
