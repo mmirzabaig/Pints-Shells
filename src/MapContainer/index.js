@@ -75,7 +75,6 @@ import ReactDOM from "react-dom";
 
   render() {
 
-    console.log(this.props.brewData);
 
     const markerLocations = this.props.brewData.map((item, index) => {
       let street = item.street.split('+').join(' ');
