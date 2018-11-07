@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'semantic-ui-react';
-import './Map.css';
+import ReactDOM from "react-dom";
 
  import { GoogleApiWrapper, InfoWindow, Map, Marker, Content } from 'google-maps-react';
 
@@ -15,7 +15,7 @@ import './Map.css';
 
   onMarkerClick = (props, marker, e) => {
 
-    console.log(props, 'HELLO')
+    console.log(props)
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -33,6 +33,46 @@ import './Map.css';
     }
   }
 
+  onInfoWindowOpen(props, e) {
+    const button = (
+      <Button color="green" onClick={
+        this.addTour.bind(null, this.state.info)
+        }
+      >Add to Brew Tour</Button>
+    );
+    ReactDOM.render(
+      React.Children.only(button),
+      document.getElementById("aTour")
+    );
+  }
+
+  addTour = async (brewery, e) => {
+    e.preventDefault();
+    let jsonObj = {
+      name: brewery.name,
+      phone: brewery.phone,
+      street: brewery.street,
+      city: brewery.city,
+      state: brewery.state,
+      phone: brewery.phone,
+      website_url: brewery.website_url
+    }
+    console.log(jsonObj, 'MIRZA');
+    try {
+      const addedBrewery = await fetch('http://localhost:9000/brews', {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(jsonObj),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    } catch(err){
+      console.log('error')
+      console.log(err)
+    }
+  }
+
   render() {
 
 
@@ -46,7 +86,7 @@ import './Map.css';
           city = {item.city}
           state = {item.state}
           website_url = {item.website_url}
-          street = {street}
+          street = {item.street}
           phone = {item.phone}
           id = {item.id}
         />
@@ -77,6 +117,9 @@ import './Map.css';
 
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }
+          onOpen={e => {
+                this.onInfoWindowOpen(this.props, e);
+              }}
         >
         <content>
         <div>
@@ -91,7 +134,7 @@ import './Map.css';
           </Card.Description>
           </Card.Content>
           <Card.Content extra>
-          <Button onClick={console.log('hello')} color="blue">Add to Brew Tour</Button>
+          <div id="aTour" />
           </Card.Content>
           </Card>
           </div>
