@@ -84,6 +84,10 @@ componentDidMount() {
 
   render() {
 
+    const tripContainerStyle = {
+      margin: '45% 0 0 0'
+    }
+
     return (
       <div className="App">
       <Header />
@@ -91,21 +95,18 @@ componentDidMount() {
         <Route exact path="/brewTour" component={BrewTour} />
       </Switch>
 
-          <div className="findBrewery" border='2px solid black'>
-            <BrewMap tourData={this.state.tourData} />
-          <Button>
-            HELLO
-          </Button>
+          <div className="findBreweryContainer" >
           <Tacos />
             <h2>Search for breweries here</h2>
           </div>
 
-            <div className="map" border='2px solid black'>
+            <div className="mapContainer">
               <Map brewData={this.state.locations}/>
           </div>
 
-        <div className="tripForm">
+        <div className="tripFormContainer" style={ tripContainerStyle } >
         <h1>The brewery info go here. Tacos included!</h1>
+          <BrewMap tourData={this.state.tourData} />
         </div>
 
       </div>

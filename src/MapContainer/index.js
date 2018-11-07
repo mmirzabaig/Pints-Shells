@@ -99,7 +99,8 @@ import ReactDOM from "react-dom";
     const style = {
       width: '90%',
       height: '70%',
-      position: 'relative'
+      left: '5%',
+      position: 'fixed'
     }
     return (
       <div>

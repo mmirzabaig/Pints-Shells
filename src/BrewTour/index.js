@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import BrewMap from '../BrewMap';
+import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 
 class BrewTour extends Component {
   constructor(){
@@ -36,7 +38,34 @@ class BrewTour extends Component {
 
   render() {
 
-    return(null);
+    let tourData = 'hello'
+    if(this.state.tourData.data) {
+    console.log(this.state, 'CURRENT DATA BEN')
+    // <p>{item.city}</p>
+    // <p>{item.state}</p>
+    // <p>{item.website_url}</p>
+    // <p>{item.street}</p>
+    // <p>{item.phone}</p>
+
+    tourData = this.state.tourData.data.map((item, index) => {
+      return(
+        <div key={item._id}>
+          <p>{item.name}</p>
+        </div>
+      );
+    })
+
+  }
+    console.log('WAFENwalefn,weakhefwal,')
+    return(
+      <div>
+        <li><Button><Link to="/">Hoempage</Link></Button></li>
+      <ul>
+        {tourData}
+      </ul>
+      <p>HELLO</p>
+    </div>
+    );
   }
 }
 
