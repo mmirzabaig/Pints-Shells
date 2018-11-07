@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import Tacos from './Tacos';
 import BrewTour from './BrewTour';
-import logo from './logo.svg';
+import Beer1 from './Beer1.jpg';
 import Map from './MapContainer';
 import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
@@ -86,6 +86,7 @@ componentDidMount() {
   render() {
     return (
       <div className="App">
+
       <Header />
       <Switch>
         <Route exact path="/brewTour" component={BrewTour} />
