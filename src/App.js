@@ -6,6 +6,7 @@ import BrewMap from './BrewMap';
 import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -34,7 +35,6 @@ class App extends Component {
 
 
 getBrewData = async () => {
-  console.log('skdksdbklsdksd');
   try {
   const brewData = await fetch('https://api.openbrewerydb.org/breweries?by_city=austin&per_page=50');
   const brewDataJson = await brewData.json();
@@ -87,6 +87,9 @@ componentDidMount() {
     return (
       <div className="App">
       <Header />
+      <Switch>
+        <Route exact path="/brewTour" component={BrewTour} />
+      </Switch>
 
           <div className="findBrewery" border='2px solid black'>
             <BrewMap tourData={this.state.tourData} />
