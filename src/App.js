@@ -14,6 +14,7 @@ class App extends Component {
 }
 
 getBrewData = async () => {
+  console.log('skdksdbklsdksd');
   try {
   const brewData = await fetch('https://api.openbrewerydb.org/breweries?by_city=austin&per_page=50');
   const brewDataJson = await brewData.json();
@@ -57,7 +58,7 @@ componentDidMount() {
   render() {
     return (
       <div className="App">
-        <h1>Welcome to Pints & Shells!</h1>
+      
 
         <div className="findBrewery">
           <h2>Search for breweries here</h2>
