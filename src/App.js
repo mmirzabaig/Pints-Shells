@@ -16,6 +16,7 @@ class App extends Component {
 }
 
 getBrewData = async () => {
+  console.log('skdksdbklsdksd');
   try {
   const brewData = await fetch('https://api.openbrewerydb.org/breweries?by_city=austin&per_page=50');
   const brewDataJson = await brewData.json();
