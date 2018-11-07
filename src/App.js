@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import logo from './logo.svg';
 import Map from './MapContainer';
-import BrewLocator from './BrewLocator';
 import './App.css';
 
 class App extends Component {
@@ -68,10 +67,8 @@ componentDidMount() {
           <Map brewData={this.state.locations}/>
         </div>
 
-        <div className="brewsList">
+        <div className="tripForm">
         <h1>The brewery info go here. Tacos included!</h1>
-        <Button color="red">View Your Favorite Breweries</Button>
-        <BrewLocator locationData={this.state.locations} />
         </div>
 
       </div>
