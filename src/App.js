@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import Tacos from './Tacos';
+import BrewTour from './BrewTour';
 import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
@@ -14,6 +15,31 @@ class App extends Component {
     locations: []
   }
 }
+
+
+  getTourData = async () => {
+    try{
+
+      const brewTourData = await fetch('http://localhost:9000/brews');
+      const brewTourDataJson = await brewTourData.json();
+      return brewTourDataJson;
+
+    } catch(err) {
+      return(err)
+    }
+  }
+
+  componentDidMount() {
+    this.getTourData().then((data) => {
+      this.setState({
+        tourData: data
+      })
+        console.log(this.state.tourData.data, 'TOUR DATA MAINE');
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
+
 
 getBrewData = async () => {
   console.log('skdksdbklsdksd');
@@ -63,6 +89,7 @@ componentDidMount() {
       <Header />
 
           <div className="findBrewery">
+          <BrewTour />
           <Tacos />
             <h2>Search for breweries here</h2>
           </div>
