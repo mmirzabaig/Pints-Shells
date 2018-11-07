@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'semantic-ui-react';
+import './Map.css';
 
  import { GoogleApiWrapper, InfoWindow, Map, Marker, Content } from 'google-maps-react';
 
@@ -34,7 +35,6 @@ import { Card, Button } from 'semantic-ui-react';
 
   render() {
 
-    console.log(this.props.brewData);
 
     const markerLocations = this.props.brewData.map((item, index) => {
       let street = item.street.split('+').join(' ');
@@ -91,7 +91,7 @@ import { Card, Button } from 'semantic-ui-react';
           </Card.Description>
           </Card.Content>
           <Card.Content extra>
-          <Button color="green">Add to Brew Tour</Button>
+          <Button onClick={console.log('hello')} color="blue">Add to Brew Tour</Button>
           </Card.Content>
           </Card>
           </div>

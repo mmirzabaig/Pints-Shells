@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
+import Tacos from './Tacos';
 import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
@@ -61,13 +62,15 @@ componentDidMount() {
       <div className="App">
       <Header />
 
-        <div className="findBrewery">
-          <h2>Search for breweries here</h2>
-        </div>
-
-        <div className="map">
-          <Map brewData={this.state.locations}/>
-        </div>
+          <div className="findBrewery">
+          <Tacos />
+            <h2>Search for breweries here</h2>
+          </div>
+          <div className='ui container' >
+            <div className="map">
+              <Map brewData={this.state.locations}/>
+              </div>
+          </div>
 
         <div className="tripForm">
         <h1>The brewery info go here. Tacos included!</h1>
