@@ -3,6 +3,8 @@ import { Button } from 'semantic-ui-react';
 import Tacos from './Tacos';
 import BrewTour from './BrewTour';
 import Beer1 from './Beer1.jpg';
+import BrewMap from './BrewMap';
+import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
@@ -13,7 +15,8 @@ class App extends Component {
   constructor() {
   super();
   this.state = {
-    locations: []
+    locations: [],
+    tourData: []
   }
 }
 
@@ -23,22 +26,12 @@ class App extends Component {
 
       const brewTourData = await fetch('http://localhost:9000/brews');
       const brewTourDataJson = await brewTourData.json();
+      console.log(brewTourDataJson, 'TOUR DATA APP.JS')
       return brewTourDataJson;
 
     } catch(err) {
       return(err)
     }
-  }
-
-  componentDidMount() {
-    this.getTourData().then((data) => {
-      this.setState({
-        tourData: data
-      })
-        console.log(this.state.tourData.data, 'TOUR DATA MAINE');
-    }).catch((err) => {
-      console.log(err);
-    })
   }
 
 
@@ -76,14 +69,26 @@ componentDidMount() {
         this.getGeoLocation(data[i], i)
     }
     }
-
-
   }).catch((err) => {
     console.log(err)
+  })
+
+  this.getTourData().then((data) => {
+    this.setState({
+      tourData: data
+    })
+      console.log(this.state.tourData.data, 'TOUR DATA MAINE');
+  }).catch((err) => {
+    console.log(err);
   })
 }
 
   render() {
+
+    const tripContainerStyle = {
+      margin: '45% 0 0 0'
+    }
+
     return (
       <div className="App">
 
@@ -92,19 +97,18 @@ componentDidMount() {
         <Route exact path="/brewTour" component={BrewTour} />
       </Switch>
 
-          <div className="findBrewery">
-          <BrewTour />
+          <div className="findBreweryContainer" >
           <Tacos />
             <h2>Search for breweries here</h2>
           </div>
-          <div className='ui container' >
-            <div className="map">
+
+            <div className="mapContainer">
               <Map brewData={this.state.locations}/>
-              </div>
           </div>
 
-        <div className="tripForm">
+        <div className="tripFormContainer" style={ tripContainerStyle } >
         <h1>The brewery info go here. Tacos included!</h1>
+          <BrewMap tourData={this.state.tourData} />
         </div>
 
       </div>
