@@ -5,6 +5,7 @@ import BrewTour from './BrewTour';
 import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -86,6 +87,9 @@ componentDidMount() {
     return (
       <div className="App">
       <Header />
+      <Switch>
+        <Route exact path="/brewTour" component={BrewTour} />
+      </Switch>
 
           <div className="findBrewery">
           <BrewTour />
