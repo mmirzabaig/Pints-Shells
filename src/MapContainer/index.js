@@ -40,16 +40,15 @@ import { Card, Button } from 'semantic-ui-react';
       let street = item.street.split('+').join(' ');
       return(
         <Marker
-          key = {index}
           onClick = { this.onMarkerClick }
-          title = { item.name }
           position = {{ lat: item.latitude, lng: item.longitude }}
           name = { item.name }
           city = {item.city}
           state = {item.state}
-          url = {item.website_url}
+          website_url = {item.website_url}
           street = {street}
           phone = {item.phone}
+          id = {item.id}
         />
 
       )
@@ -87,7 +86,8 @@ import { Card, Button } from 'semantic-ui-react';
           <Card.Description>
           {this.state.info.street}<br />
           {this.state.info.city}, {this.state.info.state}<br />
-          <a href={this.state.info.url}>{this.state.info.url}</a>
+          <a href={this.state.info.website_url}>{this.state.info.website_url}</a> <br />
+          Phone: {this.state.info.phone}
           </Card.Description>
           </Card.Content>
           <Card.Content extra>
