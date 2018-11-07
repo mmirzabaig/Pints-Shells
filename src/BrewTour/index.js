@@ -36,9 +36,7 @@ class BrewTour extends Component {
 
   render() {
 
-    return(
-      <BrewMap tourData={this.state.tourData} addTourData={this.getTourData}/>
-    );
+    return(null);
   }
 }
 

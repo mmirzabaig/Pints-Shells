@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import Tacos from './Tacos';
 import BrewTour from './BrewTour';
+import BrewMap from './BrewMap';
 import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
@@ -12,7 +13,8 @@ class App extends Component {
   constructor() {
   super();
   this.state = {
-    locations: []
+    locations: [],
+    tourData: []
   }
 }
 
@@ -22,22 +24,12 @@ class App extends Component {
 
       const brewTourData = await fetch('http://localhost:9000/brews');
       const brewTourDataJson = await brewTourData.json();
+      console.log(brewTourDataJson, 'TOUR DATA APP.JS')
       return brewTourDataJson;
 
     } catch(err) {
       return(err)
     }
-  }
-
-  componentDidMount() {
-    this.getTourData().then((data) => {
-      this.setState({
-        tourData: data
-      })
-        console.log(this.state.tourData.data, 'TOUR DATA MAINE');
-    }).catch((err) => {
-      console.log(err);
-    })
   }
 
 
@@ -76,27 +68,37 @@ componentDidMount() {
         this.getGeoLocation(data[i], i)
     }
     }
-
-
   }).catch((err) => {
     console.log(err)
+  })
+
+  this.getTourData().then((data) => {
+    this.setState({
+      tourData: data
+    })
+      console.log(this.state.tourData.data, 'TOUR DATA MAINE');
+  }).catch((err) => {
+    console.log(err);
   })
 }
 
   render() {
+
     return (
       <div className="App">
       <Header />
 
-          <div className="findBrewery">
-          <BrewTour />
+          <div className="findBrewery" border='2px solid black'>
+            <BrewMap tourData={this.state.tourData} />
+          <Button>
+            HELLO
+          </Button>
           <Tacos />
             <h2>Search for breweries here</h2>
           </div>
-          <div className='ui container' >
-            <div className="map">
+
+            <div className="map" border='2px solid black'>
               <Map brewData={this.state.locations}/>
-              </div>
           </div>
 
         <div className="tripForm">
