@@ -110,7 +110,7 @@ import ReactDOM from "react-dom";
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = { 11 }
+        zoom = {11 }
         initialCenter = {{ lat: 30.3005, lng: -97.7388 }}
       >
         {markerLocations}
