@@ -9,6 +9,7 @@ import Map from './MapContainer';
 import Header from './Header';
 import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
+import Login from './Login';
 
 class App extends Component {
 
@@ -95,6 +96,7 @@ componentDidMount() {
       <Header />
       <Switch>
         <Route exact path="/brewTour" component={BrewTour} />
+        <Route exact path="/" component={Login}/>
       </Switch>
 
           <div className="findBreweryContainer" >
