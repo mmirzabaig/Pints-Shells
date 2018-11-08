@@ -76,29 +76,12 @@ import ReactDOM from "react-dom";
   render() {
 
 
-    const markerLocations = this.props.brewData.map((item, index) => {
-      let street = item.street.split('+').join(' ');
-      return(
-        <Marker
-          onClick = { this.onMarkerClick }
-          position = {{ lat: item.latitude, lng: item.longitude }}
-          name = { item.name }
-          city = {item.city}
-          state = {item.state}
-          website_url = {item.website_url}
-          street = {street}
-          phone = {item.phone}
-          id = {item.id}
-        />
-
-      )
-    });
 
 
 
     const style = {
-      width: '90%',
-      height: '70%',
+      width: '40%',
+      height: '40%',
       left: '5%',
       position: 'fixed'
     }
@@ -113,35 +96,8 @@ import ReactDOM from "react-dom";
         zoom = {11 }
         initialCenter = {{ lat: 30.3005, lng: -97.7388 }}
       >
-        {markerLocations}
-        <InfoWindow
 
-          marker = { this.state.activeMarker }
-          visible = { this.state.showingInfoWindow }
-          onOpen={e => {
-                this.onInfoWindowOpen(this.props, e);
-              }}
-        >
-        <content>
-        <div>
-        <Card>
-        <Card.Content>
-          <Card.Header>{this.state.info.name}</Card.Header>
-          <Card.Description>
-          {this.state.info.street}<br />
-          {this.state.info.city}, {this.state.info.state}<br />
-          <a href={this.state.info.website_url}>{this.state.info.website_url}</a> <br />
-          Phone: {this.state.info.phone}
-          </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-          <div id="aTour" />
-          </Card.Content>
-          </Card>
-          </div>
-        </content>
 
-        </InfoWindow>
       </Map>
       </div>
     );
