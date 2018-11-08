@@ -37,8 +37,6 @@ class Login extends Component {
     if(parsedResponse.data === 'login successful'){
       // change our component
       console.log('success login')
-      // this automatically get passed to your component as a prop
-      this.props.history.push('/');
     }
   }
   render(){
