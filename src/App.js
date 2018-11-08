@@ -96,7 +96,7 @@ componentDidMount() {
       <Header />
       <Switch>
         <Route exact path="/brewTour" component={BrewTour} />
-        <Route exact path="/" component={Login}/>
+        
       </Switch>
 
           <div className="findBreweryContainer" >
