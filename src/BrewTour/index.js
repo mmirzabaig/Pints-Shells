@@ -60,7 +60,7 @@ class BrewTour extends Component {
   }
     return(
       <div>
-        <li><Button><Link to="/">Hoempage</Link></Button></li>
+        <li><Button><Link to="/">Homepage</Link></Button></li>
       <ul>
         {tourData}
         <Tab tourData={this.state.tourData} />
