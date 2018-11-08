@@ -6,7 +6,7 @@ import Tab from '../Tabs';
 import TacoMapContainer from '../TacoMapContainer';
 import Tacos from '../Tacos'
 import swal from '@sweetalert/with-react';
-
+         
 class BrewTour extends Component {
   constructor(){
     super();

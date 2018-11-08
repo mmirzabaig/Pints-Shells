@@ -76,12 +76,12 @@ import ReactDOM from "react-dom";
   render() {
 
 
-
+    console.log(this.props, 'MAP PROPS')
 
 
     const style = {
-      width: '40%',
-      height: '40%',
+      width: '20%',
+      height: '20%',
       left: '5%',
       position: 'relative'
     }
@@ -93,9 +93,13 @@ import ReactDOM from "react-dom";
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = {11 }
+        zoom = {9 }
         initialCenter = {{ lat: 30.3005, lng: -97.7388 }}
       >
+      <Marker
+        onClick = { this.onMarkerClick }
+        position = {{ lat: this.props.pos[0], lng: this.props.pos[1] }}
+      />
 
 
       </Map>
