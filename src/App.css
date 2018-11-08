@@ -3,6 +3,7 @@
   background-image: url("Beer1.jpg");
   background-size: cover;
   height: 1000px;
+  color: white;
 }
 
 .App-logo {
@@ -19,10 +20,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.brewsList {
-  margin-top: 40%;
 }
 
 .App-link {
