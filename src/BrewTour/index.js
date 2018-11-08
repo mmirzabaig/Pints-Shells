@@ -91,7 +91,7 @@ class BrewTour extends Component {
       <div>
         <Link to="/"><Button>Close</Button></Link>
       <ul>
-        <Tab tourData={this.state.tourData}/>
+        
         {tourData}
 
       </ul>
