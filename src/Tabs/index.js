@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import { Tab } from 'semantic-ui-react'
+import MapContainer from '../MapContainer';
 
 class TabExampleLoading extends Component {
 constructor(){
   super();
-
+  this.state = {
+    props: []
+  }
 }
 
+
 render(){
+
     console.log(this.props, 'UPDATE this are props')
     if (this.props.tourData.data) {
     const tourData = this.props.tourData.data.map((item, i) => {

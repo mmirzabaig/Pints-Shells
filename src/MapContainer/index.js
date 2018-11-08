@@ -86,7 +86,7 @@ import ReactDOM from "react-dom";
           city = {item.city}
           state = {item.state}
           website_url = {item.website_url}
-          street = {item.street}
+          street = {street}
           phone = {item.phone}
           id = {item.id}
         />
