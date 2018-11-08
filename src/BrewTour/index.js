@@ -3,6 +3,9 @@ import BrewMap from '../BrewMap';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import Tab from '../Tabs';
+import TacoMapContainer from '../TacoMapContainer';
+import Tacos from '../Tacos'
+import swal from '@sweetalert/with-react';
 
 class BrewTour extends Component {
   constructor(){
@@ -26,7 +29,7 @@ class BrewTour extends Component {
   }
 
   deleteBrewTour = async (id) => {
-
+    swal('Your Trip Has Been Deleted, Go Back To Add Another!')
     const deletedBrewTourResponse = await fetch('http://localhost:9000/brews/' + id, {
       method: 'DELETE'
     });
@@ -44,7 +47,6 @@ class BrewTour extends Component {
       this.setState({
         tourData: data
       })
-        console.log(this.state.tourData.data, 'TOUR DATA MAINE');
     }).catch((err) => {
       console.log(err);
     })
@@ -54,9 +56,15 @@ class BrewTour extends Component {
 
   render() {
 
+    const style = {
+      color: 'white',
+      height: '230px',
+      'font-weight': 'Bold',
+      border: '2px solid white'
+    }
+
     let tourData = 'hello'
     if(this.state.tourData.data) {
-    console.log(this.state, 'CURRENT DATA BEN')
     // <p>{item.city}</p>
     // <p>{item.state}</p>
     // <p>{item.website_url}</p>
@@ -64,10 +72,16 @@ class BrewTour extends Component {
     // <p>{item.phone}</p>
 
     tourData = this.state.tourData.data.map((item, index) => {
+
       return(
-        <div key={item._id}>
+        <div style={style} key={item._id}>
+        <Button onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</Button>
+          <Tacos pos={[item.position[0].lat, item.position[0].lng]}  />
           <p>{item.name}</p>
-          <Button onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</Button>
+          <p>{item.street}</p>
+          <p>{item.city}</p>
+          <p>{item.name}</p>
+          <p>{item.website_url}</p>
         </div>
       );
     })
@@ -75,12 +89,12 @@ class BrewTour extends Component {
   }
     return(
       <div>
-        <li><Button><Link to="/">Close</Link></Button></li>
+        <Link to="/"><Button>Close</Button></Link>
       <ul>
+        <Tab tourData={this.state.tourData}/>
         {tourData}
-        <Tab tourData={this.state.tourData} />
+
       </ul>
-      <p>HELLO</p>
     </div>
     );
   }

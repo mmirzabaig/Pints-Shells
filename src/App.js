@@ -4,6 +4,7 @@ import Tacos from './Tacos';
 import BrewTour from './BrewTour';
 import Beer1 from './Beer1.jpg';
 import BrewMap from './BrewMap';
+import Tab from './Tabs';
 import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
@@ -26,7 +27,7 @@ class App extends Component {
 
       const brewTourData = await fetch('http://localhost:9000/brews');
       const brewTourDataJson = await brewTourData.json();
-      console.log(brewTourDataJson, 'TOUR DATA APP.JS')
+
       return brewTourDataJson;
 
     } catch(err) {
@@ -39,6 +40,7 @@ getBrewData = async () => {
   try {
   const brewData = await fetch('https://api.openbrewerydb.org/breweries?by_city=austin&per_page=50');
   const brewDataJson = await brewData.json();
+      console.log(brewDataJson, 'TOUR DATA APP.JS')
   return brewDataJson
   } catch(err) {
     return(err)
@@ -92,22 +94,22 @@ componentDidMount() {
     return (
       <div className="App">
 
-      <Header />
-      <Switch>
-        <Route exact path="/brewTour" component={BrewTour} />
-      </Switch>
+        <Header />
 
-          <div className="findBreweryContainer" >
-          <Tacos />
-            <h2><Button><Link to="/brewTour">View Your Tour</Link></Button></h2>
-          </div>
+        <Switch>
+          <Route exact path="/brewTour" component={BrewTour} />
+        </Switch>
 
-            <div className="mapContainer">
-              <Map brewData={this.state.locations}/>
-          </div>
+        <div className="findBreweryContainer" >
+          <h2><Link to="/brewTour"><button class="ui inverted green button">View Your Tour</button></Link></h2>
+        </div>
+
+        <div className="mapContainer">
+          <Map brewData={this.state.locations}/>
+        </div>
 
         <div className="tripFormContainer" style={ tripContainerStyle } >
-        <h1>The brewery info go here. Tacos included!</h1>
+          <h1>The brewery info go here. Tacos included!</h1>
           <BrewMap tourData={this.state.tourData} />
         </div>
 
