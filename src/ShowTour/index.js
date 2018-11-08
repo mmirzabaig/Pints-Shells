@@ -9,20 +9,7 @@ class ShowTour extends Component {
 
   render(){
     console.log('IS INVOKING SHOWTOUR')
-    return(
-      <div className='AppTab'>
-
-        <TacoMapContainer />
-        <h1>BEN</h1>
-        <h1>BEN</h1>
-        <h1>BEN</h1>
-        <h1>BEN</h1>
-        <h1>BEN</h1>
-        <h1>BEN</h1>
-        <h1>BEN</h1>
-        <h1>BEN</h1>
-      </div>
-    )
+    return(null)
   }
 }
 

@@ -57,10 +57,10 @@ class BrewTour extends Component {
   render() {
 
     const style = {
-      color: 'white',
+      color: 'black',
       height: '230px',
       'font-weight': 'Bold',
-      border: '2px solid white'
+      border: '2px solid black'
     }
 
     let tourData = 'hello'

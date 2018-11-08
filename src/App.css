@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: url("Beer1.jpg");
+  background-image: url("");
   background-size: cover;
   height: 1000px;
   color: red;
@@ -9,6 +9,10 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
+}
+
+Header {
+  background-color: grey;
 }
 
 .App-header {
