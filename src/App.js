@@ -7,7 +7,7 @@ import BrewMap from './BrewMap';
 import logo from './logo.svg';
 import Map from './MapContainer';
 import Header from './Header';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -99,7 +99,7 @@ componentDidMount() {
 
           <div className="findBreweryContainer" >
           <Tacos />
-            <h2>Search for breweries here</h2>
+            <h2><Button><Link to="/brewTour">View Your Tour</Link></Button></h2>
           </div>
 
             <div className="mapContainer">

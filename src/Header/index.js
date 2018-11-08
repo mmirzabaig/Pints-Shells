@@ -3,6 +3,7 @@ import { Header } from 'semantic-ui-react';
 import BrewTour from '../BrewTour';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
+import './Header.css';
 
 
 const HeaderApp = () => {
@@ -11,7 +12,7 @@ const HeaderApp = () => {
       <h1>Pints & Shells</h1>
       <ul>
         <li><Link to="/">Login</Link></li>
-        <li><Button><Link to="/brewTour">View Your Tour</Link></Button></li>
+        <li></li>
       </ul>
     </Header>
     )
