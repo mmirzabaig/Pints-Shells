@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import TacoMapContainer from '../TacoMapContainer';
 
 class Tacos extends Component {
   constructor(){
     super();
 
     this.state = {
-      tacos: []
+      tacos: [],
+      tacoPos: []
     }
   }
 
@@ -40,7 +42,10 @@ class Tacos extends Component {
   }
 
   render(){
-    return(null);
+    console.log(this.state, 'STATE CHECK')
+    return(
+      <TacoMapContainer pos={this.props.pos}/>
+    );
   }
 }
 

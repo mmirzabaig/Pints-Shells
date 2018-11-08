@@ -83,7 +83,7 @@ import ReactDOM from "react-dom";
       width: '40%',
       height: '40%',
       left: '5%',
-      position: 'fixed'
+      position: 'relative'
     }
     return (
       <div>

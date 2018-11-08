@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'semantic-ui-react';
 import ReactDOM from "react-dom";
+import Tab from '../Tabs';
+import swal from '@sweetalert/with-react';
 
  import { GoogleApiWrapper, InfoWindow, Map, Marker, Content } from 'google-maps-react';
 
@@ -47,7 +49,9 @@ import ReactDOM from "react-dom";
   }
 
   addTour = async (brewery, e) => {
+      this.state.showingInfoWindow = false;
     e.preventDefault();
+    swal(brewery.name + ' Has Been Added In Your Tour!');
     let jsonObj = {
       name: brewery.name,
       phone: brewery.phone,
@@ -55,9 +59,9 @@ import ReactDOM from "react-dom";
       city: brewery.city,
       state: brewery.state,
       phone: brewery.phone,
-      website_url: brewery.website_url
+      website_url: brewery.website_url,
+      position: brewery.position
     }
-    console.log(jsonObj, 'MIRZA');
     try {
       const addedBrewery = await fetch('http://localhost:9000/brews', {
         method: 'POST',
@@ -143,6 +147,7 @@ import ReactDOM from "react-dom";
 
         </InfoWindow>
       </Map>
+        <Tab tourData={this.state.tourData} />
       </div>
     );
   }
