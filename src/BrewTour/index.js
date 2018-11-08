@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BrewMap from '../BrewMap';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
+import Tab from '../Tabs';
 
 class BrewTour extends Component {
   constructor(){
@@ -36,6 +37,7 @@ class BrewTour extends Component {
   }
 
 
+
   render() {
 
     let tourData = 'hello'
@@ -56,12 +58,12 @@ class BrewTour extends Component {
     })
 
   }
-    console.log('WAFENwalefn,weakhefwal,')
     return(
       <div>
         <li><Button><Link to="/">Hoempage</Link></Button></li>
       <ul>
         {tourData}
+        <Tab tourData={this.state.tourData} />
       </ul>
       <p>HELLO</p>
     </div>

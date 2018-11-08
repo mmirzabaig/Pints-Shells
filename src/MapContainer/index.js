@@ -35,7 +35,7 @@ import ReactDOM from "react-dom";
 
   onInfoWindowOpen(props, e) {
     const button = (
-      <Button color="green" onClick={
+      <Button color="blue" onClick={
         this.addTour.bind(null, this.state.info)
         }
       >Add to Brew Tour</Button>
