@@ -91,7 +91,7 @@ componentDidMount() {
 
           <div className="findBreweryContainer" >
           <Tacos />
-            <h2><Button><Link to="/BrewTour">View Your Tour</Link></Button></h2>
+            <h2><Button><Link to="/brewTour">View Your Tour</Link></Button></h2>
           </div>
 
             <div className="mapContainer">
