@@ -4,12 +4,12 @@ class ShowTour extends Component {
   constructor(){
     super();
 
-    
+
   }
 
   render(){
     return(
-      <h1>SHOW ME THE MONEY</h1>
+      <h1>{this.tourData}</h1>
     )
   }
 }

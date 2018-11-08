@@ -25,6 +25,20 @@ class BrewTour extends Component {
     }
   }
 
+  deleteBrewTour = async (id) => {
+
+    const deletedBrewTourResponse = await fetch('http://localhost:9000/brews/' + id, {
+      method: 'DELETE'
+    });
+
+    const deleteBrewTourJson = deletedBrewTourResponse.json();
+
+    this.setState({
+      tourData: this.state.tourData.data.filter((tour) => tour._id !== id)
+    })
+  }
+
+
   componentDidMount() {
     this.getTourData().then((data) => {
       this.setState({
@@ -53,6 +67,7 @@ class BrewTour extends Component {
       return(
         <div key={item._id}>
           <p>{item.name}</p>
+          <Button onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</Button>
         </div>
       );
     })
@@ -60,7 +75,7 @@ class BrewTour extends Component {
   }
     return(
       <div>
-        <li><Button><Link to="/">Homepage</Link></Button></li>
+        <li><Button><Link to="/">Close</Link></Button></li>
       <ul>
         {tourData}
         <Tab tourData={this.state.tourData} />
