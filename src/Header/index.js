@@ -10,7 +10,7 @@ const HeaderApp = () => {
     <Header>
       <h1>Pints & Shells</h1>
       <ul>
-        <li><Link to="/">Login</Link></li>
+        <li><Link to="/">Logout</Link></li>
         <li></li>
       </ul>
     </Header>
