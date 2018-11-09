@@ -89,7 +89,14 @@ componentDidMount() {
 
 
           <div className="findBreweryContainer" >
-            <h2><Link to="/brewTour"><button class="ui inverted green button">View Your Tour</button></Link></h2>
+            <h2>WELCOME TO THE AUSTIN BREWERY EXPERIENCE</h2>
+
+            <h3>Making Friends Is Our Business</h3>
+
+            <h3>With over 30+ Austin brewery locations across the city, each location has its own story, providing unique perspectives on the history and making of off their own specialty.
+
+               From the historic Celis Brewery to the Sours of Jester King, each of these breweries have a captivating story to tell.</h3>
+
           </div>
 
             <div className="mapContainer">
@@ -97,8 +104,8 @@ componentDidMount() {
           </div>
 
         <div className="tripFormContainer" style={ tripContainerStyle } >
-        <h1>Coming Soon: TACOS!!</h1>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSSDQD24sbGxeUPE-dvPUMcNr73W4mIAZHZUSVdU01oc3aWv8W9A"/>
+          <h1>Coming Soon: TACOS!!</h1>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSSDQD24sbGxeUPE-dvPUMcNr73W4mIAZHZUSVdU01oc3aWv8W9A"/>
         </div>
 
       </div>
