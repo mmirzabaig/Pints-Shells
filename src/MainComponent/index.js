@@ -3,7 +3,6 @@ import { Button } from 'semantic-ui-react';
 import Tacos from '../Tacos';
 import BrewTour from '../BrewTour';
 import Map from '../MapContainer';
-import Header from '../Header';
 import { Route, Switch, Link } from 'react-router-dom';
 
 class Brewery extends Component {
@@ -98,7 +97,8 @@ componentDidMount() {
           </div>
 
         <div className="tripFormContainer" style={ tripContainerStyle } >
-        <h1>The brewery info go here. Tacos included!</h1>
+        <h1>Coming Soon: TACOS!!</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSSDQD24sbGxeUPE-dvPUMcNr73W4mIAZHZUSVdU01oc3aWv8W9A"/>
         </div>
 
       </div>

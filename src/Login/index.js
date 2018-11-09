@@ -5,7 +5,6 @@ import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 
 
-
 class Login extends Component {
   constructor(){
     super();
@@ -39,7 +38,7 @@ class Login extends Component {
     if(parsedResponse.data === 'login successful'){
       // change our component
       console.log('success login')
-        this.props.history.push('/brews');
+      this.props.history.push('/brews');
     }
   }
   render(){
@@ -73,6 +72,7 @@ class Login extends Component {
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
       />
+
 
       <Form onSubmit={this.handleSubmit}>
         <Label> Username</Label>

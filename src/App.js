@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import BrewTour from './BrewTour';
-import Header from './Header';
+import NavBar from './NavBar';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
@@ -15,16 +15,12 @@ class App extends Component {
     return (
 
       <div className="App">
-
-      <div className="Header">
-      <Header />
-      </div>
-
-      <Switch>
-        <Route exact path="/" component={Login}/>
-        <Route exact path="/brews" component={Brewery}/>
-        <Route exact path="/brewTour" component={BrewTour} />
-      </Switch>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Login}/>
+          <Route exact path="/brews" component={Brewery}/>
+          <Route exact path="/brewTour" component={BrewTour} />
+        </Switch>
       </div>
     );
   }
