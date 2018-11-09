@@ -84,13 +84,16 @@ componentDidMount() {
     const tripContainerStyle = {
       margin: '45% 0 0 0'
     }
+    const viewStyle = {
+      margin: '40px'
+    }
 
     return (
       <div className="App">
 
 
           <div className="findBreweryContainer" >
-            <h2><Link to="/brewTour"><button class="ui inverted green button">View Your Tour</button></Link></h2>
+            <h2><Link to="/brewTour"><button style={viewStyle} class="ui inverted black button" >View Your Tour</button></Link></h2>
           </div>
 
             <div className="mapContainer">

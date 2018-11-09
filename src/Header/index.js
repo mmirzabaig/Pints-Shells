@@ -8,13 +8,10 @@ import MenuExampleInvertedSecondary from '../Navbar';
 
 
 const HeaderApp = () => {
+
   return (
     <Header>
-    <MenuExampleInvertedSecondary />
-      <h1>Pints & Shells</h1>
-      <ul>
-        <Link to="/">Logout</Link>
-      </ul>
+      <MenuExampleInvertedSecondary />
     </Header>
     )
 }

@@ -1,9 +1,13 @@
 .App {
   text-align: center;
-  background-image: url("");
+  background-color: #ADB4C7;
   background-size: cover;
   height: 1000px;
   color: red;
+}
+
+div .Navbar {
+  color: blue;
 }
 
 .App-logo {
