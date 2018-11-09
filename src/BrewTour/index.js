@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import BrewMap from '../BrewMap';
 import { Link } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
+import { Button, Grid } from 'semantic-ui-react';
 import Tab from '../Tabs';
 import TacoMapContainer from '../TacoMapContainer';
 import Tacos from '../Tacos'
 import swal from '@sweetalert/with-react';
-         
+
+
 class BrewTour extends Component {
   constructor(){
     super();
@@ -90,11 +91,9 @@ class BrewTour extends Component {
     return(
       <div>
         <Link to="/"><Button>Close</Button></Link>
-      <ul>
-        <Tab tourData={this.state.tourData}/>
+      <div class='two column row'>
         {tourData}
-
-      </ul>
+      </div>
     </div>
     );
   }

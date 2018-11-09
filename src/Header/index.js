@@ -11,8 +11,7 @@ const HeaderApp = () => {
     <Header>
       <h1>Pints & Shells</h1>
       <ul>
-        <li><Link to="/">Logout</Link></li>
-        <li></li>
+        <Link to="/">Logout</Link>
       </ul>
     </Header>
     )
