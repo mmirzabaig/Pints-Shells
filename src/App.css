@@ -2,7 +2,7 @@
   text-align: center;
   background-color: #ADB4C7;
   background-size: cover;
-  height: 1000px;
+  height: 1200px;
   color: red;
 }
 
@@ -17,6 +17,12 @@ div .Navbar {
 
 Header {
   background-color: grey;
+}
+
+.welcome {
+  color: white;
+  background-color: grey;
+  margin-bottom: 50px;
 }
 
 .App-header {

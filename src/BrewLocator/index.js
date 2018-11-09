@@ -46,7 +46,7 @@ render() {
   });
 return(
   <div>
-    <h1>Location of Brewery</h1>
+    
 
     <ul>{brewLocations}</ul>
 

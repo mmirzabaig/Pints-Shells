@@ -22,7 +22,7 @@ export default class MenuExampleInvertedSecondary extends Component {
       const navBar = {
         position: 'sticky',
         top: '0',
-        opacity: '0.9'
+        opacity: '0.9',
       }
 
 
@@ -45,7 +45,9 @@ export default class MenuExampleInvertedSecondary extends Component {
           <Menu.Item name='View Your Tour'
             active={activeItem === 'View Your Tour'}
             onClick={this.handleItemClick}>
-            <Link style={style} to="/">View Your Tour</Link>
+
+            <Link style={style} to="/brewTour">View Your Tour</Link>
+
           </Menu.Item>
 
           <h1 style={headingStyle} >Pints And Shells</h1>
@@ -58,6 +60,11 @@ export default class MenuExampleInvertedSecondary extends Component {
             <Link style={style} to="">GitHub</Link>
           </Menu.Item>
 
+          <Menu.Item name='Logout'
+            active={activeItem === 'Logout'}
+            onClick={this.handleItemClick}>
+            <Link style={style} to="/login">Logout</Link>
+          </Menu.Item>
 
           <Menu.Item name='Login'
             active={activeItem === 'Login'}

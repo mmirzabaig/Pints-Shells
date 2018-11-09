@@ -3,7 +3,6 @@ import { Button } from 'semantic-ui-react';
 import Tacos from '../Tacos';
 import BrewTour from '../BrewTour';
 import Map from '../MapContainer';
-import Header from '../Header';
 import { Route, Switch, Link } from 'react-router-dom';
 
 class Brewery extends Component {
@@ -82,26 +81,38 @@ componentDidMount() {
   render() {
 
     const tripContainerStyle = {
-      margin: '45% 0 0 0'
-    }
-    const viewStyle = {
-      margin: '40px'
+      margin: '45% 0 0 0',
+      border: '5px solid white',
+      'max-width': '400px',
+      position: 'fixed',
+
+
+
+
     }
 
     return (
       <div className="App">
 
 
-          <div className="findBreweryContainer" >
-            <h2><Link to="/brewTour"><button style={viewStyle} class="ui inverted black button" >View Your Tour</button></Link></h2>
+          <div className="welcome" >
+            <h2>WELCOME TO PINTS & SHELLS</h2>
+
+            <h3>Whats better than a nice, cold beer? A nice, cold beer with the best tacos we could find!</h3>
+
+            <h3>With over 30+ Austin brewery locations across the city, each location has its own story, providing unique perspectives on the history and making of off their own specialty.
+
+               From the historic Celis Brewery to the Sours of Jester King, each of these breweries have a captivating story to tell.</h3>
+
           </div>
 
             <div className="mapContainer">
               <Map brewData={this.state.locations}/>
           </div>
 
-        <div className="tripFormContainer" style={ tripContainerStyle } >
-        <h1>The brewery info go here. Tacos included!</h1>
+        <div className="tripFormContainer"  >
+          <h1>Coming Soon: TACOS!!</h1>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSSDQD24sbGxeUPE-dvPUMcNr73W4mIAZHZUSVdU01oc3aWv8W9A"/>
         </div>
 
       </div>

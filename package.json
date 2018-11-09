@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.5.0",
     "@sweetalert/with-react": "^0.1.1",
     "google-maps-react": "^2.0.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-facebook-login": "^4.1.1",
+    "react-form-login": "^1.1.4",
     "react-google-login": "^3.2.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
+    "reactstrap": "^6.5.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.83.0",
     "sweetalert": "^2.1.2"

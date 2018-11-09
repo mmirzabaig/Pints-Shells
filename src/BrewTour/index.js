@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import BrewMap from '../BrewMap';
 import { Link } from 'react-router-dom';
 import { Button, Grid } from 'semantic-ui-react';
 import Tab from '../Tabs';
@@ -62,10 +61,17 @@ class BrewTour extends Component {
       color: 'black',
       height: '230px',
       'font-weight': 'Bold',
-      border: '2px solid black'
+      border: '2px solid black',
+      'max-width': '650px',
+      'text-align': 'right',
+      margin: '12px'
+    }
+    const parent = {
+      'text-align': 'center',
+      'max-width': '750px'
     }
 
-    let tourData = 'hello'
+    let tourData;
     if(this.state.tourData.data) {
     // <p>{item.city}</p>
     // <p>{item.state}</p>
@@ -83,7 +89,7 @@ class BrewTour extends Component {
           <p>{item.street}</p>
           <p>{item.city}</p>
           <p>{item.name}</p>
-          <p>{item.website_url}</p>
+          <a href={item.website_url}>{item.website_url}</a><br/>
         </div>
       );
     })
@@ -91,7 +97,6 @@ class BrewTour extends Component {
   }
     return(
       <div className='App'>
-        <Link to="/"><button class="ui inverted black button">Close</button></Link>
       <div class='two column row'>
         {tourData}
       </div>

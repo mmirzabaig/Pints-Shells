@@ -5,7 +5,6 @@ import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 
 
-
 class Login extends Component {
   constructor(){
     super();
@@ -39,10 +38,15 @@ class Login extends Component {
     if(parsedResponse.data === 'login successful'){
       // change our component
       console.log('success login')
-        this.props.history.push('/brews');
+
     }
   }
   render(){
+
+    const style = {
+      'max-width': '300px',
+      'text-align': 'center'
+    }
 
     const responseFacebook = (response) => {
       console.log(response);
