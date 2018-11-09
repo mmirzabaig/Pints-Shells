@@ -23,6 +23,7 @@ export default class MenuExampleInvertedSecondary extends Component {
         position: 'sticky',
         top: '0',
         opacity: '0.9',
+        'z-index': '2'
       }
 
 
@@ -69,7 +70,7 @@ export default class MenuExampleInvertedSecondary extends Component {
           <Menu.Item name='Login'
             active={activeItem === 'Login'}
             onClick={this.handleItemClick}>
-            <Link style={style} to="/">Login</Link>
+            <Link style={style} to="/login">Login</Link>
           </Menu.Item>
 
         </Menu>

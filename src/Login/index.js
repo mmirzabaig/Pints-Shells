@@ -3,6 +3,7 @@ import { Form, Label, Button } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
+import { Link } from 'react-router-dom';
 
 
 class Login extends Component {
@@ -103,7 +104,7 @@ class Login extends Component {
         <Form.Input placeholder='Username' type='text' name="username" onChange={this.handleChange} />
 
         <Form.Input placeholder='Password' type='password' name="password" onChange={this.handleChange} />
-        <button type="Submit" class="ui inverted black button">Login</button>
+        <Link to='/'><button type="Submit" class="ui inverted black button">Login</button></Link>
       </Form>
 
       </div>

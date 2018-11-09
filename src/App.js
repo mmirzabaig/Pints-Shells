@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import BrewTour from './BrewTour';
-import NavBar from './Navbar';
+import NavBar from './NavBar';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Login from './Login';

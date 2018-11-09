@@ -20,9 +20,9 @@ Header {
 }
 
 .welcome {
-  color: white;
-  background-color: grey;
-  margin-bottom: 50px;
+  color: black;
+  margin: 50px;
+  position: relative;
 }
 
 .App-header {
