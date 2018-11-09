@@ -51,35 +51,55 @@ class Login extends Component {
     const responseGoogle = (response) => {
       console.log(response);
     }
+    const formStyle = {
+       width: '550px',
+       top: '50px',
+       margin: '20px auto'
+
+    }
+    const loginStyle = {
+      height: '20px',
+      margin: '10px'
+    }
+
+    const headingStyle = {
+      color: 'black',
+      'font-size': '25px',
+      margin: '40px'
+    }
 
     return (
 
       <div className="Login">
-        <h1>Welcome to Pints & Shells!</h1>
-        <h2>Sign in below with Facebook or Google</h2>
+        <h2 style={headingStyle}>Sign in below with Facebook or Google</h2>
 
-      <FacebookLogin
-        appId="2012853998969903" //APP ID NOT CREATED YET
-        fields="name,email,picture"
-        callback={responseFacebook}
-      />
+      <div style={loginStyle}>
+        <FacebookLogin
+          style={loginStyle}
+          appId="2012853998969903" //APP ID NOT CREATED YET
+          fields="name,email,picture"
+          callback={responseFacebook}
+        />
+      </div>
+
       <br />
       <br />
 
+      <div style={loginStyle}>
+        <GoogleLogin
+          clientId="522376826390-qk8a7luadtrs61f2f11lcof7f7g9agdc.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
+          buttonText="LOGIN WITH GOOGLE"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+        />
+      </div>
 
-      <GoogleLogin
-        clientId="522376826390-qk8a7luadtrs61f2f11lcof7f7g9agdc.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
-        buttonText="LOGIN WITH GOOGLE"
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle}
-      />
+      <Form style={formStyle} onSubmit={this.handleSubmit}>
 
-      <Form onSubmit={this.handleSubmit}>
-        <Label> Username</Label>
-        <Form.Input type='text' name="username" onChange={this.handleChange} />
-        <Label> Password</Label>
-        <Form.Input type='password' name="password" onChange={this.handleChange} />
-        <Button type="Submit" color="green">Login</Button>
+        <Form.Input placeholder='Username' type='text' name="username" onChange={this.handleChange} />
+
+        <Form.Input placeholder='Password' type='password' name="password" onChange={this.handleChange} />
+        <button type="Submit" class="ui inverted black button">Login</button>
       </Form>
 
       </div>

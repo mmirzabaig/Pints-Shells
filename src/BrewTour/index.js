@@ -77,7 +77,7 @@ class BrewTour extends Component {
 
       return(
         <div style={style} key={item._id}  className='App'>
-        <Button onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</Button>
+        <button class="ui inverted black button" onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</button>
           <Tacos pos={[item.position[0].lat, item.position[0].lng]}  />
           <p>{item.name}</p>
           <p>{item.street}</p>
@@ -91,7 +91,7 @@ class BrewTour extends Component {
   }
     return(
       <div className='App'>
-        <Link to="/"><Button>Close</Button></Link>
+        <Link to="/"><button class="ui inverted black button">Close</button></Link>
       <div class='two column row'>
         {tourData}
       </div>
