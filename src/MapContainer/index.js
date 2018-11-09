@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import Tab from '../Tabs';
 import swal from '@sweetalert/with-react';
 
- import { GoogleApiWrapper, InfoWindow, Map, Marker, Content } from 'google-maps-react';
+ import { GoogleApiWrapper, InfoWindow, Map, Marker, Content, Places } from 'google-maps-react';
 
   class GoogleMapsContainer extends React.Component {
   constructor(props) {
