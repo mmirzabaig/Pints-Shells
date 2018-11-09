@@ -64,7 +64,8 @@ class BrewTour extends Component {
       border: '2px solid black',
       'max-width': '650px',
       'text-align': 'right',
-      margin: '12px'
+      margin: '12px 0 12px 25%',
+
     }
     const parent = {
       'text-align': 'center',
@@ -83,7 +84,7 @@ class BrewTour extends Component {
 
       return(
         <div style={style} key={item._id}  className='App'>
-        <button class="ui inverted black button" onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</button>
+        <button class="ui inverted black button" onClick={this.deleteBrewTour.bind(null, item._id)}>Delete</button>
           <Tacos pos={[item.position[0].lat, item.position[0].lng]}  />
           <p>{item.name}</p>
           <p>{item.street}</p>
