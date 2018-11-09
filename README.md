@@ -1,7 +1,7 @@
 # Pints-Shells
 A platform to locate breweries in a certain area and also give locations to nearby places to get tacos. Built in React.
 
-![alt text](./images/Login “Login page”)
+
 
 ## Link to Site
 
@@ -15,6 +15,19 @@ A platform to locate breweries in a certain area and also give locations to near
 - Express
 - MongoDB and Mongoose
 
+## APIs Used:
+### Front-End
+- Google Maps API
+- Google Places API
+- Google Login
+- Facebook Login
 
-## Further Challenges:
+### Back-End
+- Open Brewery DB
+
+
+## Stretch Goals:
+- Give location of places to get tacos within short distance of each brewery
+- User feedback on breweries
+- Create a User profile 
 
