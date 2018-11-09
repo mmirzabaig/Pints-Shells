@@ -104,7 +104,8 @@ import swal from '@sweetalert/with-react';
       width: '90%',
       height: '70%',
       left: '5%',
-      position: 'fixed'
+      position: 'fixed',
+      border: '8px solid white',
     }
     return (
       <div>

@@ -5,6 +5,7 @@ import Tab from '../Tabs';
 import TacoMapContainer from '../TacoMapContainer';
 import Tacos from '../Tacos'
 import swal from '@sweetalert/with-react';
+import '../App.css';
 
 
 class BrewTour extends Component {
@@ -81,7 +82,7 @@ class BrewTour extends Component {
     tourData = this.state.tourData.data.map((item, index) => {
 
       return(
-        <div style={style} key={item._id}>
+        <div style={style} key={item._id}  className='App'>
         <Button onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</Button>
           <Tacos pos={[item.position[0].lat, item.position[0].lng]}  />
           <p>{item.name}</p>

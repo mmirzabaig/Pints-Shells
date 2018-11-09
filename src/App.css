@@ -1,9 +1,13 @@
 .App {
   text-align: center;
-  background-image: url("https://www.wallpapersbrowse.com/images/9q/9qmecoz.jpg");
+  background-color: #ADB4C7;
   background-size: cover;
-  height: 1000px;
+  height: 1200px;
   color: red;
+}
+
+div .Navbar {
+  color: blue;
 }
 
 .App-logo {
@@ -17,6 +21,8 @@ Header {
 
 .welcome {
   color: white;
+  background-color: grey;
+  margin-bottom: 50px;
 }
 
 .App-header {

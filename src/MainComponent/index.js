@@ -81,7 +81,14 @@ componentDidMount() {
   render() {
 
     const tripContainerStyle = {
-      margin: '45% 0 0 0'
+      margin: '45% 0 0 0',
+      border: '5px solid white',
+      'max-width': '400px',
+      position: 'fixed',
+
+
+
+
     }
 
     return (
@@ -103,7 +110,7 @@ componentDidMount() {
               <Map brewData={this.state.locations}/>
           </div>
 
-        <div className="tripFormContainer" style={ tripContainerStyle } >
+        <div className="tripFormContainer"  >
           <h1>Coming Soon: TACOS!!</h1>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSSDQD24sbGxeUPE-dvPUMcNr73W4mIAZHZUSVdU01oc3aWv8W9A"/>
         </div>
