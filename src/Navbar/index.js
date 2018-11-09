@@ -26,7 +26,7 @@ export default class MenuExampleInvertedSecondary extends Component {
         zIndex: '2',
         fontFamily: 'Permanent Marker'
       }
-
+         
 
     return (
       <div className='navBar' style={navBar}>
