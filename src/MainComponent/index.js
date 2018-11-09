@@ -88,10 +88,10 @@ componentDidMount() {
       <div className="App">
 
 
-          <div className="findBreweryContainer" >
-            <h2>WELCOME TO THE AUSTIN BREWERY EXPERIENCE</h2>
+          <div className="welcome" >
+            <h2>WELCOME TO PINTS & SHELLS</h2>
 
-            <h3>Making Friends Is Our Business</h3>
+            <h3>Whats better than a nice, cold beer? A nice, cold beer with the best tacos we could find!</h3>
 
             <h3>With over 30+ Austin brewery locations across the city, each location has its own story, providing unique perspectives on the history and making of off their own specialty.
 

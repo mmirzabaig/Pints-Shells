@@ -38,10 +38,15 @@ class Login extends Component {
     if(parsedResponse.data === 'login successful'){
       // change our component
       console.log('success login')
-      
+
     }
   }
   render(){
+
+    const style = {
+      'max-width': '300px',
+      'text-align': 'center'
+    }
 
     const responseFacebook = (response) => {
       console.log(response);
@@ -73,8 +78,8 @@ class Login extends Component {
         onFailure={responseGoogle}
       />
 
-
-      <Form onSubmit={this.handleSubmit}>
+      
+      <Form style={style} onSubmit={this.handleSubmit}>
         <Label> Username</Label>
         <Form.Input type='text' name="username" onChange={this.handleChange} />
         <Label> Password</Label>
