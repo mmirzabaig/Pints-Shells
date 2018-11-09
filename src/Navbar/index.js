@@ -11,19 +11,20 @@ export default class MenuExampleInvertedSecondary extends Component {
   render() {
     const { activeItem } = this.state
     const style = {
-      'font-size': '20px',
-      'margin-bottom': '10px'
+      fontSize: '20px',
+      marginBottom: '10px'
     }
     const headingStyle = {
       color: 'white',
-      'margin-left': '20%'
+      marginLeft: '20%'
     }
 
       const navBar = {
         position: 'sticky',
         top: '0',
         opacity: '0.9',
-        'z-index': '2'
+        zIndex: '2',
+        fontFamily: 'Permanent Marker'
       }
 
 
