@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import Tab from '../Tabs';
 import swal from '@sweetalert/with-react';
 
- import { GoogleApiWrapper, InfoWindow, Map, Marker, Content, Places } from 'google-maps-react';
+ import { GoogleApiWrapper, InfoWindow, Map, Marker, Content, Places, Directions, MapViewDirections, MapView } from 'google-maps-react';
 
   class GoogleMapsContainer extends React.Component {
   constructor(props) {
@@ -77,8 +77,11 @@ import swal from '@sweetalert/with-react';
     }
   }
 
+
   render() {
 
+    const origin = {latitude: 37.3318456, longitude: -122.0296002};
+    const destination = {latitude: 37.771707, longitude: -122.4053769};
 
     const markerLocations = this.props.brewData.map((item, index) => {
       let street = item.street.split('+').join(' ');
@@ -105,19 +108,21 @@ import swal from '@sweetalert/with-react';
       height: '70%',
       left: '5%',
       position: 'fixed',
-      border: '8px solid white',
+      border: '8px solid white'
     }
     return (
       <div>
+
       <Map
         item
         xs = { 12 }
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = {11 }
+        zoom = {12 }
         initialCenter = {{ lat: 30.3005, lng: -97.7388 }}
       >
+
         {markerLocations}
         <InfoWindow
 

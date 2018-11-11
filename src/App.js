@@ -7,16 +7,14 @@ import './App.css';
 import Login from './Login';
 import Brewery from './MainComponent';
 
-
 class App extends Component {
 
 
   render() {
 
     return (
-      
-      <div className="App">
 
+      <div className="App">
         <NavBar />
         <Switch>
           <Route exact path="/login" component={Login}/>

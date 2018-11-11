@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import TacoMapContainer from '../TacoMapContainer';
 
 class Tacos extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
     this.state = {
       tacos: [],
-      tacoPos: []
+      deriveProps: this.props,
+      pos: this.props.pos
     }
+    console.log('HELLO')
+
+    console.log(this.state, 'CONSTRUCTOR FUNCTION JUST RAN')
   }
 
 //get tacos
@@ -17,11 +21,11 @@ class Tacos extends Component {
     try {
 
 
-      const tacosData = await fetch('https://developers.zomato.com/api/v2.1/search?lat=30.3005&lon=-97.7388&radius=1609.34&count=10%category=taco&sort=real_distance', {
+      const tacosData = await fetch('https://developers.zomato.com/api/v2.1/search?lat=' + this.state.deriveProps.pos[0] + '&lon=' + this.state.deriveProps.pos[1] + '&radius=1609.34&count=10&category=mexican&sort=real_distance', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'user-key': 'b444031ab9fe38897f23e9ccf030c753'
+          'user-key': 'ef8d69da47e7a4a0e7a44ca73a44c018'
         }
       });
       const tacosDataJson = await tacosData.json();
@@ -32,19 +36,22 @@ class Tacos extends Component {
     }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.getTacos().then((item) => {
-
-
+      this.setState({
+        tacos: item
+      })
     }).catch((err) => {
       console.log(err)
     })
   }
 
+
+
   render(){
-    console.log(this.state, 'STATE CHECK')
-    return(
-      <TacoMapContainer pos={this.props.pos}/>
+    console.log(this.state.tacos, 'RENDER FUNCTION JUST RAN')
+    return(!Array.isArray(this.state.tacos) ?
+      <TacoMapContainer pos={this.state.pos} tacos={this.state.tacos} /> : null
     );
   }
 }

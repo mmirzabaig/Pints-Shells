@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Menu, Segment, Image} from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
+import '../App.css';
 
 export default class MenuExampleInvertedSecondary extends Component {
   state = { activeItem: 'home' }
@@ -9,6 +10,7 @@ export default class MenuExampleInvertedSecondary extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
+
     const { activeItem } = this.state
     const style = {
       fontSize: '20px',
@@ -21,15 +23,19 @@ export default class MenuExampleInvertedSecondary extends Component {
 
       const navBar = {
         position: 'sticky',
-        top: '0',
+        top: 0,
         opacity: '0.9',
         zIndex: '2',
-        fontFamily: 'Permanent Marker'
       }
-         
+
 
     return (
       <div className='navBar' style={navBar}>
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Vidaloka');
+      </style>
+
       <Segment inverted>
 
         <Menu inverted pointing secondary>

@@ -7,6 +7,7 @@ import ReactDOM from "react-dom";
   class GoogleMapsContainer extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props, 'CONSTRUCTOR PROPS')
     this.state = {
       info: []
     }
@@ -76,7 +77,18 @@ import ReactDOM from "react-dom";
   render() {
 
 
-    console.log(this.props, 'MAP PROPS')
+    console.log(this.props  , 'MAP PROPS')
+    const tacoMarkers = this.props.tacos.restaurants.map((item) => {
+      console.log(item.restaurant.location.longitude)
+      return(
+        <Marker
+          onClick = { this.onMarkerClick }
+          position = {{ lat: item.restaurant.location.latitude, lng: item.restaurant.location.longitude }}
+          icon = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+        />
+      )
+    })
+
 
 
     const style = {
@@ -100,6 +112,8 @@ import ReactDOM from "react-dom";
         onClick = { this.onMarkerClick }
         position = {{ lat: this.props.pos[0], lng: this.props.pos[1] }}
       />
+
+      {tacoMarkers}
 
 
       </Map>

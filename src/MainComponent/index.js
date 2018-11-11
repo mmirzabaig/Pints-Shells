@@ -3,7 +3,6 @@ import { Button } from 'semantic-ui-react';
 import Tacos from '../Tacos';
 import BrewTour from '../BrewTour';
 import Map from '../MapContainer';
-import { Route, Switch, Link } from 'react-router-dom';
 
 class Brewery extends Component {
   constructor(){
@@ -46,7 +45,7 @@ try {
     const coordinatesJson = await coordinates.json();
     data.latitude = coordinatesJson.results[0].geometry.location.lat;
     data.longitude = coordinatesJson.results[0].geometry.location.lng;
-
+    this.getTacos(data.latitude, data.longitude)
 
     this.setState(prevState => ({
       locations: [...prevState.locations, data]
@@ -55,6 +54,27 @@ try {
     return(err)
 }
 }
+
+
+getTacos = async (lat, lng) => {
+  try {
+
+
+    const tacosData = await fetch('https://developers.zomato.com/api/v2.1/search?lat='+ lat +'&'+ lng +'&radius=1609.34&count=10&category=taco&sort=real_distance', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'user-key': 'b444031ab9fe38897f23e9ccf030c753'
+      }
+    });
+    const tacosDataJson = await tacosData.json();
+    console.log(tacosDataJson, 'MIRZA BAIGGG')
+    return tacosDataJson;
+  } catch(err) {
+    return(err)
+  }
+}
+
 componentDidMount() {
   this.getBrewData().then((data) => {
     for ( let i = 0; i < data.length; i++ ) {
@@ -81,9 +101,9 @@ componentDidMount() {
   render() {
 
     const tripContainerStyle = {
-      'margin-top': '45%',
-      'margin-left': '37%',
-      'max-width': '400px',
+      marginTop: '45%',
+      marginLeft: '37%',
+      maxWidth: '400px',
       position: 'relative',
       color: 'black'
 
@@ -107,7 +127,7 @@ componentDidMount() {
 
           </div>
 
-            <div className="mapContainer">
+           <div className="mapContainer">
               <Map brewData={this.state.locations}/>
           </div>
 

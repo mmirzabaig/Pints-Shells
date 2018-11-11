@@ -25,6 +25,11 @@ Header {
   position: relative;
 }
 
+.navBar {
+  font-family: 'Vidaloka', serif;
+  color: red;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

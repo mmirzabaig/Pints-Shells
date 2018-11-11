@@ -60,30 +60,23 @@ class BrewTour extends Component {
     const style = {
       color: 'black',
       height: '230px',
-      'font-weight': 'Bold',
+      fontWeight : 'Bold',
       border: '2px solid black',
-      'max-width': '650px',
-      'text-align': 'right',
+      maxWidth: '650px',
+      textAlign: 'right',
       margin: '12px 0 12px 25%',
 
     }
-    const parent = {
-      'text-align': 'center',
-      'max-width': '750px'
-    }
+
 
     let tourData;
     if(this.state.tourData.data) {
-    // <p>{item.city}</p>
-    // <p>{item.state}</p>
-    // <p>{item.website_url}</p>
-    // <p>{item.street}</p>
-    // <p>{item.phone}</p>
+
 
     tourData = this.state.tourData.data.map((item, index) => {
 
       return(
-        <div style={style} key={item._id}  className='App'>
+        <div style={style} key={item._id} >
         <button class="ui inverted black button" onClick={this.deleteBrewTour.bind(null, item._id)}>Delete</button>
           <Tacos pos={[item.position[0].lat, item.position[0].lng]}  />
           <p>{item.name}</p>
@@ -97,10 +90,9 @@ class BrewTour extends Component {
 
   }
     return(
-      <div className='App'>
+
       <div class='two column row'>
         {tourData}
-      </div>
     </div>
     );
   }
