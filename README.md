@@ -1,5 +1,5 @@
 # Pints-Shells
-A platform to locate breweries in a certain area and also give locations to nearby places to get tacos. Built in React.
+A User-friendly platform to locate breweries in and around Austin, TX and also give locations to nearby places to get tacos. 
 
 
 
