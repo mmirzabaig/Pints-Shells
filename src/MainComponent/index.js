@@ -4,6 +4,7 @@ import Tacos from '../Tacos';
 import BrewTour from '../BrewTour';
 import Map from '../MapContainer';
 
+
 class Brewery extends Component {
   constructor(){
     super();
@@ -126,7 +127,7 @@ componentDidMount() {
                <br></br>From the historic Celis Brewery to the Sours of Jester King, each of these breweries have a captivating story to tell.</h3>
 
           </div>
-
+       
            <div className="mapContainer">
               <Map brewData={this.state.locations}/>
           </div>

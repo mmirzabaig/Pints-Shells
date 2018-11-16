@@ -21,7 +21,7 @@ class Tacos extends Component {
     try {
 
 
-      const tacosData = await fetch('https://developers.zomato.com/api/v2.1/search?lat=' + this.state.deriveProps.pos[0] + '&lon=' + this.state.deriveProps.pos[1] + '&radius=1609.34&count=10&category=mexican&sort=real_distance', {
+      const tacosData = await fetch('https://developers.zomato.com/api/v2.1/search?lat=' + this.state.deriveProps.pos[0] + '&lon=' + this.state.deriveProps.pos[1] + '&radius=1609.34&count=10&category=tacos&sort=real_distance', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ class Tacos extends Component {
   render(){
     console.log(this.state.tacos, 'RENDER FUNCTION JUST RAN')
     return(!Array.isArray(this.state.tacos) ?
-      <TacoMapContainer pos={this.state.pos} tacos={this.state.tacos} /> : null
+      <TacoMapContainer pos={this.props.pos} tacos={this.state.tacos} /> : null
     );
   }
 }

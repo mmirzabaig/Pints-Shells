@@ -35,44 +35,10 @@ import ReactDOM from "react-dom";
   }
 
   onInfoWindowOpen(props, e) {
-    const button = (
-      <Button color="blue" onClick={
-        this.addTour.bind(null, this.state.info)
-        }
-      >Add to Brew Tour</Button>
-    );
-    ReactDOM.render(
-      React.Children.only(button),
-      document.getElementById("aTour")
-    );
+    e.preventDefault();
   }
 
-  addTour = async (brewery, e) => {
-    e.preventDefault();
-    let jsonObj = {
-      name: brewery.name,
-      phone: brewery.phone,
-      street: brewery.street,
-      city: brewery.city,
-      state: brewery.state,
-      phone: brewery.phone,
-      website_url: brewery.website_url
-    }
-    console.log(jsonObj, 'MIRZA');
-    try {
-      const addedBrewery = await fetch('http://localhost:9000/brews', {
-        method: 'POST',
-        credentials: 'include',
-        body: JSON.stringify(jsonObj),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-    } catch(err){
-      console.log('error')
-      console.log(err)
-    }
-  }
+
 
   render() {
 
@@ -85,6 +51,9 @@ import ReactDOM from "react-dom";
           onClick = { this.onMarkerClick }
           position = {{ lat: item.restaurant.location.latitude, lng: item.restaurant.location.longitude }}
           icon = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+          name = { item.restaurant.name }
+          location = { item.restaurant.location.address }
+          menu_url = { item.restaurant.menu_url }
         />
       )
     })
@@ -92,10 +61,12 @@ import ReactDOM from "react-dom";
 
 
     const style = {
-      width: '20%',
-      height: '20%',
+      width: '300px',
+      height: '300px',
       left: '5%',
-      position: 'relative'
+      position: 'fixed',
+      borderRadius: '50%',
+      border: '2px solid black',
     }
     return (
       <div>
@@ -105,8 +76,8 @@ import ReactDOM from "react-dom";
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = {9 }
-        initialCenter = {{ lat: 30.3005, lng: -97.7388 }}
+        zoom = {11 }
+        initialCenter = {{ lat: this.props.pos[0], lng: this.props.pos[1] }}
       >
       <Marker
         onClick = { this.onMarkerClick }
@@ -115,8 +86,35 @@ import ReactDOM from "react-dom";
 
       {tacoMarkers}
 
+      <InfoWindow
 
+        marker = { this.state.activeMarker }
+        visible = { this.state.showingInfoWindow }
+        onOpen={e => {
+              this.onInfoWindowOpen(e, this.props);
+            }}
+      >
+      <content>
+      <div>
+      <Card>
+      <Card.Content>
+        <Card.Header>{this.state.info.name}</Card.Header>
+        { this.state.info.location }
+        { this.state.info.menu_url }
+        <Card.Description>
+
+        </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+        <div id="aTour" />
+        </Card.Content>
+        </Card>
+        </div>
+      </content>
+
+      </InfoWindow>
       </Map>
+
       </div>
     );
   }

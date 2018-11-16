@@ -59,10 +59,10 @@ class BrewTour extends Component {
 
     const style = {
       color: 'black',
-      height: '230px',
+      height: '700px',
       fontWeight : 'Bold',
       border: '2px solid black',
-      maxWidth: '650px',
+      width: '950px',
       textAlign: 'right',
       margin: '12px 0 12px 25%',
 
@@ -75,17 +75,21 @@ class BrewTour extends Component {
 
     tourData = this.state.tourData.data.map((item, index) => {
 
+
+
+
+
       return(
-        <div style={style} key={item._id} >
-        <button class="ui inverted black button" onClick={this.deleteBrewTour.bind(null, item._id)}>Delete</button>
-          <Tacos pos={[item.position[0].lat, item.position[0].lng]}  />
+        <div key={item._id} style={style}>
+          <Button onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</Button>
           <p>{item.name}</p>
-          <p>{item.street}</p>
-          <p>{item.city}</p>
-          <p>{item.name}</p>
-          <a href={item.website_url}>{item.website_url}</a><br/>
+
+              <Tacos pos={[item.position[0].lat, item.position[0].lng]}  />
+
+
         </div>
       );
+
     })
 
   }

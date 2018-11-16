@@ -90,12 +90,14 @@ import swal from '@sweetalert/with-react';
           onClick = { this.onMarkerClick }
           position = {{ lat: item.latitude, lng: item.longitude }}
           name = { item.name }
+          icon = {{ url: require('./beer.png')}}
           city = {item.city}
           state = {item.state}
           website_url = {item.website_url}
           street = {street}
           phone = {item.phone}
           id = {item.id}
+          size = {2}
         />
 
       )
@@ -119,7 +121,7 @@ import swal from '@sweetalert/with-react';
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = {12 }
+        zoom = {11 }
         initialCenter = {{ lat: 30.3005, lng: -97.7388 }}
       >
 
