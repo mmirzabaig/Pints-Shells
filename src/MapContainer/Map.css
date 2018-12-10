@@ -1,7 +1,9 @@
-Button {
-  background: black;
+.fade fade-appear {
+  opacity: 0;
+  z-index: 1;
 }
 
-Map {
-  border: 2px soild black;
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opcaity 300ms linear;
 }

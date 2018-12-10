@@ -3,6 +3,8 @@ import { Card, Button } from 'semantic-ui-react';
 import ReactDOM from "react-dom";
 import Tab from '../Tabs';
 import swal from '@sweetalert/with-react';
+import { CSSTransition } from 'react-transition-group';
+import './Map.css';
 
  import { GoogleApiWrapper, InfoWindow, Map, Marker, Content, Places, Directions, MapViewDirections, MapView } from 'google-maps-react';
 
@@ -12,12 +14,12 @@ import swal from '@sweetalert/with-react';
     this.state = {
       info: []
     }
-
+    console.log(props, 'MAP DATA')
   }
 
   onMarkerClick = (props, marker, e) => {
 
-    console.log(props)
+
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -97,7 +99,7 @@ import swal from '@sweetalert/with-react';
           street = {street}
           phone = {item.phone}
           id = {item.id}
-          size = {2}
+          style={{size:'3'}}
         />
 
       )
@@ -110,8 +112,19 @@ import swal from '@sweetalert/with-react';
       height: '70%',
       left: '5%',
       position: 'fixed',
-      border: '8px solid white'
+      border: '10px solid black',
     }
+
+    // const fadeStyle = {
+    //   '.fade-appear'  {
+    //     opacity: 0,
+    //     zIndex: 1
+    //   }
+    //   .fadeAppear.fadeAppearActive  {
+    //     opacity: 1,
+    //     transition: 'opcaity 300ms linear'
+    //   }
+    // }
     return (
       <div>
 
@@ -136,21 +149,27 @@ import swal from '@sweetalert/with-react';
         >
         <content>
         <div>
-        <Card>
-        <Card.Content>
-          <Card.Header>{this.state.info.name}</Card.Header>
-          <Card.Description>
-          {this.state.info.street}<br />
-          {this.state.info.city}, {this.state.info.state}<br />
-          <a href={this.state.info.website_url}>{this.state.info.website_url}</a> <br />
-          Phone: {this.state.info.phone}
-          </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-          <div id="aTour" />
-          </Card.Content>
-          </Card>
-          </div>
+          <CSSTransition
+            in={this.state.showingInfoWindow}
+            appear={true}
+            timeout={600}
+          >
+            <Card classNames="fade">
+            <Card.Content>
+              <Card.Header>{this.state.info.name}</Card.Header>
+              <Card.Description>
+              {this.state.info.street}<br />
+              {this.state.info.city}, {this.state.info.state}<br />
+              <a href={this.state.info.website_url}>{this.state.info.website_url}</a> <br />
+              Phone: {this.state.info.phone}
+              </Card.Description>
+              </Card.Content>
+              <Card.Content extra>
+              <div id="aTour" />
+              </Card.Content>
+              </Card>
+            </CSSTransition>
+        </div>
         </content>
 
         </InfoWindow>

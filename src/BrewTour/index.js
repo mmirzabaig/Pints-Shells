@@ -59,7 +59,7 @@ class BrewTour extends Component {
 
     const style = {
       color: 'black',
-      height: '700px',
+      height: '400px',
       fontWeight : 'Bold',
       border: '2px solid black',
       width: '950px',
@@ -81,7 +81,7 @@ class BrewTour extends Component {
 
       return(
         <div key={item._id} style={style}>
-          <Button onClick={this.deleteBrewTour.bind(null, item._id)} >Delete</Button>
+          <Button onClick={this.deleteBrewTour.bind(null, item._id)}>Delete</Button>
           <p>{item.name}</p>
 
               <Tacos pos={[item.position[0].lat, item.position[0].lng]}  />

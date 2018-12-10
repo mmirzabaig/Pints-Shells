@@ -3,6 +3,7 @@ import { Button } from 'semantic-ui-react';
 import Tacos from '../Tacos';
 import BrewTour from '../BrewTour';
 import Map from '../MapContainer';
+import CSSFade from '../CSSFade';
 
 
 class Brewery extends Component {
@@ -21,7 +22,7 @@ class Brewery extends Component {
 
       const brewTourData = await fetch('http://localhost:9000/brews');
       const brewTourDataJson = await brewTourData.json();
-      console.log(brewTourDataJson, 'TOUR DATA APP.JS')
+
       return brewTourDataJson;
 
     } catch(err) {
@@ -69,7 +70,7 @@ getTacos = async (lat, lng) => {
       }
     });
     const tacosDataJson = await tacosData.json();
-    console.log(tacosDataJson, 'MIRZA BAIGGG')
+
     return tacosDataJson;
   } catch(err) {
     return(err)
@@ -93,7 +94,7 @@ componentDidMount() {
     this.setState({
       tourData: data
     })
-      console.log(this.state.tourData.data, 'TOUR DATA MAINE');
+
   }).catch((err) => {
     console.log(err);
   })
@@ -119,7 +120,6 @@ componentDidMount() {
 
           <div className="welcome" >
 
-
             <h3>Whats better than a nice, cold beer? A nice, cold beer with the best tacos we could find!</h3>
 
             <h3>With over 30+ Austin brewery locations across the city, each location has its own story,<br></br> providing unique perspectives on the history and making of off their own specialty.<br></br>
@@ -127,7 +127,7 @@ componentDidMount() {
                <br></br>From the historic Celis Brewery to the Sours of Jester King, each of these breweries have a captivating story to tell.</h3>
 
           </div>
-       
+
            <div className="mapContainer">
               <Map brewData={this.state.locations}/>
           </div>

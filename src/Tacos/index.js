@@ -10,7 +10,7 @@ class Tacos extends Component {
       deriveProps: this.props,
       pos: this.props.pos
     }
-    console.log('HELLO')
+   
 
     console.log(this.state, 'CONSTRUCTOR FUNCTION JUST RAN')
   }
@@ -29,7 +29,7 @@ class Tacos extends Component {
         }
       });
       const tacosDataJson = await tacosData.json();
-      console.log(tacosDataJson, 'TACOS')
+
       return tacosDataJson;
     } catch(err) {
       return(err)
@@ -49,7 +49,7 @@ class Tacos extends Component {
 
 
   render(){
-    console.log(this.state.tacos, 'RENDER FUNCTION JUST RAN')
+
     return(!Array.isArray(this.state.tacos) ?
       <TacoMapContainer pos={this.props.pos} tacos={this.state.tacos} /> : null
     );

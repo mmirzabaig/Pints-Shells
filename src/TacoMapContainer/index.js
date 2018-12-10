@@ -7,7 +7,7 @@ import ReactDOM from "react-dom";
   class GoogleMapsContainer extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props, 'CONSTRUCTOR PROPS')
+
     this.state = {
       info: []
     }
@@ -16,7 +16,7 @@ import ReactDOM from "react-dom";
 
   onMarkerClick = (props, marker, e) => {
 
-    console.log(props)
+
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -35,7 +35,7 @@ import ReactDOM from "react-dom";
   }
 
   onInfoWindowOpen(props, e) {
-    e.preventDefault();
+
   }
 
 
@@ -43,9 +43,9 @@ import ReactDOM from "react-dom";
   render() {
 
 
-    console.log(this.props  , 'MAP PROPS')
+
     const tacoMarkers = this.props.tacos.restaurants.map((item) => {
-      console.log(item.restaurant.location.longitude)
+
       return(
         <Marker
           onClick = { this.onMarkerClick }
@@ -61,12 +61,11 @@ import ReactDOM from "react-dom";
 
 
     const style = {
-      width: '300px',
+      width: '500px',
       height: '300px',
       left: '5%',
       position: 'fixed',
-      borderRadius: '50%',
-      border: '2px solid black',
+      border: '2px solid black'
     }
     return (
       <div>
@@ -76,7 +75,7 @@ import ReactDOM from "react-dom";
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = {11 }
+        zoom = {12 }
         initialCenter = {{ lat: this.props.pos[0], lng: this.props.pos[1] }}
       >
       <Marker

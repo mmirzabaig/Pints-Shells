@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Tab } from 'semantic-ui-react'
 import TacoMapContainer from '../TacoMapContainer';
-import ShowTour from '../ShowTour';
+ 
 
 
 class TabExampleLoading extends Component {
@@ -27,7 +27,7 @@ getTourData = async () => {
 
 componentDidMount(){
   this.getTourData().then((data) => {
-    console.log(data, 'AW YEAH CURRENT DATA');
+
     this.setState({
       tourData: data
     })
@@ -37,11 +37,11 @@ componentDidMount(){
 
 
 render(){
-      console.log(this.props, 'TOUR DAAATAAAA')
+
 //     const tabStyle = {
 //       color: 'blue'
 //     }
-//     console.log(this.props, 'UPDATE this are props')
+//
 //     if(this.props.tourData.data) {
 //     const tourData = this.props.tourData.data.map((item, i) => {
 //       let pane = [

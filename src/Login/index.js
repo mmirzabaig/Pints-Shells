@@ -24,7 +24,7 @@ class Login extends Component {
 
   handleSubmit = async (e) => {
 
-    console.log('I am trying to log in');
+   
     const loginResponse = await fetch('http://localhost:9000/auth', {
       method: 'POST',
       credentials: 'include', // this sends our session cookie with our request
