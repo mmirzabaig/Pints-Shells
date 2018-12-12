@@ -3,7 +3,6 @@ import { Button } from 'semantic-ui-react';
 import Tacos from '../Tacos';
 import BrewTour from '../BrewTour';
 import Map from '../MapContainer';
-import CSSFade from '../CSSFade';
 
 
 class Brewery extends Component {
