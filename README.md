@@ -31,8 +31,8 @@ A User-friendly platform to locate breweries in and around Austin, TX and also g
 - User feedback on breweries
 - Create a User profile
 
-![alt text](/public/pints.png "Logo Title Text 1")
-![alt text](/public/login.png "Logo Title Text 1")
-![alt text](/public/pints1.png "Logo Title Text 1")
-![alt text](/public/pints2.png "Logo Title Text 1")
-![alt text](/public/shells.png "Logo Title Text 1")
+![alt text](./public/pints.png "Logo Title Text 1")
+![alt text](./public/login.png "Logo Title Text 1")
+![alt text](./public/pints1.png "Logo Title Text 1")
+![alt text](./public/pints2.png "Logo Title Text 1")
+![alt text](./public/shells.png "Logo Title Text 1")
