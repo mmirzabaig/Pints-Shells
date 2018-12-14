@@ -2,6 +2,9 @@
 A User-friendly platform to locate breweries in and around Austin, TX and also give locations to nearby places to get tacos.
 
 
+## Contributers
+- Mirza Baig
+- Ben Hankins
 
 ## Link to Site
 
@@ -36,3 +39,5 @@ A User-friendly platform to locate breweries in and around Austin, TX and also g
 ![alt text](./public/images/pints1.png "Logo Title Text 1")
 ![alt text](./public/images/pints2.png "Logo Title Text 1")
 ![alt text](./public/images/shells.png "Logo Title Text 1")
+
+
